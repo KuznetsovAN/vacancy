@@ -1,0 +1,79 @@
+@min768 : ~"(min-width: 768px)";
+@min1024 : ~"(min-width: 1024px)";
+@min1366 : ~"(min-width: 1366px)";
+@min1152 : ~"(min-width: 1152px)";
+
+//@min1282: ~"(min-width: 1298px)";
+@min1282: ~"(min-width: 1030px)";
+
+@max768 : ~"(max-width: 767px)";
+@max1024 : ~"(max-width: 1023px)";
+@max1366 : ~"(max-width: 1365px)";
+@min1900 : ~"(min-width: 1900px)";
+
+@colorBlue : #00bef3;
+@colorFontOsn:  #0a225e;
+@colorDarkBlue: #2e47d7;
+@colorGreen : #75b543;
+@colorFontGray : #6d6c6c;
+
+.transform(@deg){
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -webkit-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+.scale(@col){
+  -moz-transform: scale(@col);
+  -ms-transform: scale(@col);
+  -o-transform: scale(@col);
+  -webkit-transform: scale(@col);
+  transform:scale(@col);
+}
+
+
+.animate-height(@time1,@time2){
+  -moz-transition: height @time1 @time2 ease;
+  -o-transition: height @time1 @time2 ease;
+  -webkit-transition: height @time1 @time2 ease;
+  transition: height @time1 @time2 ease;
+}
+
+.animate(@option, @time1,@time2){
+  -moz-transition: @option @time1 @time2 ease;
+  -o-transition: @option @time1 @time2 ease;
+  -webkit-transition: @option @time1 @time2 ease;
+  transition: @option @time1 @time2 ease;
+}
+
+
+.before-after(@width,@height,@display){
+  content: '';
+  width: @width;
+  height: @height;
+  display: @display;
+}
+
+.hide-md{
+  @media @min1024{
+    display: none;
+  }
+}
+
+.check(){
+  .before-after(13px,7px,inline-block);
+  border-left: solid 2px @colorBlue;
+  border-bottom: solid 2px @colorBlue;
+  .transform(-47deg);
+
+  position: relative;
+  top: -3px;
+  @media @min1024{
+    width: 15px;
+    height: 8px;
+  }
+
+}
+
